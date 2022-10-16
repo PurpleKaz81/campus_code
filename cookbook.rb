@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 INSERIR_RECEITA = 1
 VISUALIZAR_RECEITAS = 2
 BUSCAR_RECEITAS = 3
@@ -10,7 +12,7 @@ end
 def menu
   puts "[#{INSERIR_RECEITA}] Cadastre sua receita."
   puts "[#{VISUALIZAR_RECEITAS}] Ver todas as receitas."
-  puts "[3] Buscar receitas."
+  puts '[3] Buscar receitas.'
   puts "[#{SAIR}] Sair."
   puts
   print 'Escolha uma opção: '
@@ -43,11 +45,12 @@ receitas = []
 escolha = menu
 
 loop do
-  if escolha == INSERIR_RECEITA
+  case escolha
+  when INSERIR_RECEITA
     receitas << inserir_receita
-  elsif escolha == VISUALIZAR_RECEITAS
+  when VISUALIZAR_RECEITAS
     imprimir_receitas(receitas)
-  elsif escolha == SAIR
+  when SAIR
     break
   else
     puts 'Opção inválida.'
