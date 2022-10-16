@@ -6,6 +6,6 @@ class Conta
     @numero = numero
     @titular = titular
     @saldo = saldo
-    @tipo = 'corrente' # no need to fill in as parameter
+    @tipo = 'corrente' # no need to fill in as parameter if every account starts as a checcking account
   end
 end
