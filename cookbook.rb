@@ -1,24 +1,34 @@
-# frozen_string_literal: true
+def bem_vindo
+  puts 'Bem-vindo ao Cookbook.'
+end
 
-puts 'Bem-vindo ao Cookbook.'
+def menu
+  puts '[1] Cadastre sua receita.'
+  puts '[2] Ver todas as receitas.'
+  puts '[3] Sair.'
+
+  print 'Escolha uma opção: '
+  gets.chomp.to_i # implicit return
+end
+
+def inserir_receita
+  puts 'Digite o nome da sua receita: '
+  nome = gets.chomp.downcase
+  puts 'Digite o tipo de receita: '
+  tipo = gets.chomp.downcase
+  puts "Receita de #{nome} cadastrada com sucesso!"
+  { nome: nome, tipo: tipo }
+end
+
+bem_vindo
 
 receitas = []
 
-puts '[1] Cadastre sua receita.'
-puts '[2] Ver todas as receitas.'
-puts '[3] Sair.'
-
-print 'Escolha uma opção: '
-escolha = gets.chomp.to_i
+escolha = menu
 
 while escolha != 3
   if escolha == 1
-    puts 'Digite o nome da sua receita: '
-    nome = gets.chomp.downcase
-    puts 'Digite o tipo de receita: '
-    tipo = gets.chomp.downcase
-    receitas << { nome: nome, tipo: tipo }
-    puts "Receita de #{nome} cadastrada com sucesso!"
+    receitas << inserir_receita
   elsif escolha == 2
     puts '========== Receitas Cadastradas =========='
     receitas.each do |receita|
@@ -28,12 +38,7 @@ while escolha != 3
     puts 'Opção inválida.'
   end
 
-  puts '[1] Cadastre sua receita.'
-  puts '[2] Ver todas as receitas.'
-  puts '[3] Sair.'
-
-  print 'Escolha uma opção: '
-  escolha = gets.chomp.to_i
+  escolha = menu
 
   # receitas.each do |receita|
   #   puts receita
