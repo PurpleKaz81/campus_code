@@ -16,4 +16,13 @@ class Conta
       puts 'Se fodeu, man, não tem grana não!'
     end
   end
+
+  def depositar(valor)
+    self.saldo += valor
+  end
+
+  def transferir(conta_destino, valor)
+    sacar(valor) # self.sacar is optional cuz there's no = sign
+    conta_destino.depositar(valor)
+  end
 end
