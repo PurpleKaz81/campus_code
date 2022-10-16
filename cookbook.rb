@@ -11,7 +11,7 @@ puts '[3] Sair.'
 print 'Escolha uma opção: '
 escolha = gets.chomp.to_i
 
-while escolha != 3 do
+while escolha != 3
   if escolha == 1
     puts 'Digite o nome da sua receita: '
     nome = gets.chomp.downcase
@@ -21,7 +21,7 @@ while escolha != 3 do
     puts "Receita de #{nome} cadastrada com sucesso!"
   elsif escolha == 2
     puts '========== Receitas Cadastradas =========='
-    receitas. each do |receita|
+    receitas.each do |receita|
       puts "#{receita[:nome]} - #{receita[:tipo]}"
     end
   else
