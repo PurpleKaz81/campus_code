@@ -1,12 +1,18 @@
+INSERIR_RECEITA = 1
+VISUALIZAR_RECEITAS = 2
+BUSCAR_RECEITAS = 3
+SAIR = 4
+
 def bem_vindo
   puts 'Bem-vindo ao Cookbook.'
 end
 
 def menu
-  puts '[1] Cadastre sua receita.'
-  puts '[2] Ver todas as receitas.'
-  puts '[3] Sair.'
-
+  puts "[#{INSERIR_RECEITA}] Cadastre sua receita."
+  puts "[#{VISUALIZAR_RECEITAS}] Ver todas as receitas."
+  puts "[3] Buscar receitas."
+  puts "[#{SAIR}] Sair."
+  puts
   print 'Escolha uma opção: '
   gets.chomp.to_i # implicit return
 end
@@ -25,18 +31,24 @@ def imprimir_receitas(receita_input)
   receita_input.each do |receita|
     puts "#{receita[:nome]} - #{receita[:tipo]}"
   end
+  puts 'Não há receitas cadastradas.' if receita_input.empty?
 end
+
+puts
 bem_vindo
+puts
 
 receitas = []
 
 escolha = menu
 
-while escolha != 3
-  if escolha == 1
+loop do
+  if escolha == INSERIR_RECEITA
     receitas << inserir_receita
-  elsif escolha == 2
+  elsif escolha == VISUALIZAR_RECEITAS
     imprimir_receitas(receitas)
+  elsif escolha == SAIR
+    break
   else
     puts 'Opção inválida.'
   end
