@@ -1,19 +1,24 @@
 # frozen_string_literal: true
 
-receitas = []
-
 puts 'Bem-vindo ao Cookbook.'
 
-while true
+receitas = []
+
+puts '[1] Cadastre sua receita.'
+puts '[2] Ver todas as receitas.'
+puts '[3] Sair.'
+
+print 'Escolha uma opção: '
+escolha = gets.chomp.to_i
+
+while escolha != 3 do
+  
   puts 'Digite o nome da sua receita.'
   nome = gets.chomp.downcase
-
   receitas << nome
-
   puts "Receita de #{nome} cadastrada com sucesso!"
 
   puts '========== Receitas Cadastradas =========='
-
   puts receitas
 
   # receitas.each do |receita|
@@ -24,6 +29,8 @@ while true
   #   puts receita
   # end
 end
+
+puts 'Obrigado por usar o Cookbook!'
 
 # receitas << 'Bolo de cenoura'
 
