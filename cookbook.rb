@@ -14,9 +14,11 @@ while true
 
   puts '========== Receitas Cadastradas =========='
 
-  receitas.each do |receita|
-    puts receita
-  end
+  puts receitas
+
+  # receitas.each do |receita|
+  #   puts receita
+  # end
 
   # for receita in receitas
   #   puts receita
