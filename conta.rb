@@ -8,4 +8,12 @@ class Conta
     @saldo = saldo
     @tipo = 'corrente' # no need to fill in as parameter if every account starts as a checcking account
   end
+
+  def sacar(valor)
+    if saldo >= valor
+      self.saldo -= valor # we could also use @saldo
+    else
+      puts 'Se fodeu, man, não tem grana não!'
+    end
+  end
 end
