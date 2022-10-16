@@ -27,6 +27,10 @@ while escolha != 3 do
   puts '[1] Cadastre sua receita.'
   puts '[2] Ver todas as receitas.'
   puts '[3] Sair.'
+
+  print 'Escolha uma opção: '
+  escolha = gets.chomp.to_i
+
   # receitas.each do |receita|
   #   puts receita
   # end
