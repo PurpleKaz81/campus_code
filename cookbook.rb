@@ -1,13 +1,19 @@
+# frozen_string_literal: true
+
 receitas = []
 
 puts 'Bem-vindo ao Cookbook.'
 
-puts 'Digite o nome da sua receita.'
-nome = gets.chomp
+while true do
+  puts 'Digite o nome da sua receita.'
+  nome = gets.chomp.downcase
 
-receitas << nome
+  receitas << nome
 
-puts "Receita de #{nome} cadastrada com sucesso!"
+  puts "Receita de #{nome} cadastrada com sucesso!"
+  puts
+  puts '===========Receitas Cadastradas==========='
+end
 
 # receitas << 'Bolo de cenoura'
 
