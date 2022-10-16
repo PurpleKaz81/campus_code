@@ -4,15 +4,23 @@ receitas = []
 
 puts 'Bem-vindo ao Cookbook.'
 
-while true do
+while true
   puts 'Digite o nome da sua receita.'
   nome = gets.chomp.downcase
 
   receitas << nome
 
   puts "Receita de #{nome} cadastrada com sucesso!"
-  puts
-  puts '===========Receitas Cadastradas==========='
+
+  puts '========== Receitas Cadastradas =========='
+
+  receitas.each do |receita|
+    puts receita
+  end
+
+  # for receita in receitas
+  #   puts receita
+  # end
 end
 
 # receitas << 'Bolo de cenoura'
