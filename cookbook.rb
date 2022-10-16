@@ -12,15 +12,21 @@ print 'Escolha uma opção: '
 escolha = gets.chomp.to_i
 
 while escolha != 3 do
-  
-  puts 'Digite o nome da sua receita.'
-  nome = gets.chomp.downcase
-  receitas << nome
-  puts "Receita de #{nome} cadastrada com sucesso!"
+  if escolha == 1
+    puts 'Digite o nome da sua receita.'
+    nome = gets.chomp.downcase
+    receitas << nome
+    puts "Receita de #{nome} cadastrada com sucesso!"
+  elsif escolha == 2
+    puts '========== Receitas Cadastradas =========='
+    puts receitas
+  else
+    puts 'Opção inválida.'
+  end
 
-  puts '========== Receitas Cadastradas =========='
-  puts receitas
-
+  puts '[1] Cadastre sua receita.'
+  puts '[2] Ver todas as receitas.'
+  puts '[3] Sair.'
   # receitas.each do |receita|
   #   puts receita
   # end
