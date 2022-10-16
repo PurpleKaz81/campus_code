@@ -13,13 +13,17 @@ escolha = gets.chomp.to_i
 
 while escolha != 3 do
   if escolha == 1
-    puts 'Digite o nome da sua receita.'
+    puts 'Digite o nome da sua receita: '
     nome = gets.chomp.downcase
-    receitas << nome
+    puts 'Digite o tipo de receita: '
+    tipo = gets.chomp.downcase
+    receitas << { nome: nome, tipo: tipo }
     puts "Receita de #{nome} cadastrada com sucesso!"
   elsif escolha == 2
     puts '========== Receitas Cadastradas =========='
-    puts receitas
+    receitas. each do |receita|
+      puts "#{receita[:nome]} - #{receita[:tipo]}"
+    end
   else
     puts 'Opção inválida.'
   end
