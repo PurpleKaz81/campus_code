@@ -22,7 +22,11 @@ class Conta
   end
 
   def transferir(conta_destino, valor)
-    sacar(valor) # self.sacar is optional cuz there's no = sign
-    conta_destino.depositar(valor)
+    if self.saldo >= valor
+      sacar(valor) # self.sacar is optional cuz there's no = sign
+      conta_destino.depositar(valor)
+    else
+      puts 'Não dá pra transferir grana que você não tem, campeão!'
+    end
   end
 end
