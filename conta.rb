@@ -1,3 +1,5 @@
+require_relative 'cliente'
+
 class Conta
   attr_accessor :saldo
   attr_reader :numero, :titular
@@ -8,6 +10,8 @@ class Conta
     @saldo = saldo
     @tipo = 'corrente' # no need to fill in as parameter if every account starts as a checcking account
   end
+
+  # ou nome e sobrenome como parâmetro do initialize e dizer que @titular = Cliente.new(nome, sobrenome)
 
   def sacar(valor)
     if saldo >= valor
