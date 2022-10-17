@@ -8,7 +8,7 @@ class Conta
     @numero = numero
     @titular = titular
     @saldo = saldo
-    @tipo = 'corrente' # no need to fill in as parameter if every account starts as a checcking account
+    # @tipo = 'corrente' # no need to fill in as parameter if every account starts as a checcking account
   end
 
   # ou nome e sobrenome como parâmetro do initialize e dizer que @titular = Cliente.new(nome, sobrenome)
